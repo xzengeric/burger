@@ -1,0 +1,46 @@
+<div class="container jumbotron center">
+
+
+  <p class="display-3">Eat-Da-Burger!!!</p>
+
+  <hr class="my-4">
+
+  <div class="row">
+
+    <div class="listItems col-6">
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+      {{/unless}}
+      {{/each}}
+    </div>
+
+
+
+    <div class="listItems col-6">
+      {{#each burgers}} {{#if devoured}}
+
+      <li> {{burger_name}}</li>
+
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+
+</div>
+
+<div class="container jumbotron ">
+  <div class="row">
+
+    <form class="create-form center" style="width: 100%;">
+
+      <div class="form-group">
+        <p><label for="burger">Burger Name:</label></p>
+        <textarea class="form-control" type="text" id="burger" name="burger_name"></textarea>
+      </div>
+
+      <button class="btn btn-success btn-lg btn-block" type="submit">Submit</button>
+    </form>
+  </div>
+
+</div>
